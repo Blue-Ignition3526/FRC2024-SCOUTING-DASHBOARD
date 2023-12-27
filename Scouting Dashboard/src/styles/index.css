@@ -1,0 +1,65 @@
+@font-face {
+  font-family: 'Nunito';
+  src: url(../assets/Nunito-VariableFont_wght.ttf);
+}
+
+@font-face {
+  font-family: 'Material-Symbols';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../assets/MaterialSymbolsRounded.woff2') format('woff2'),
+       url('../assets/MaterialSymbolsRounded.ttf') format('ttf');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  opacity: 1;
+}
+
+#root {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+}
+
+:root {
+  font-family: Nunito, sans-serif;
+
+  color: rgba(255, 255, 255, 0.87);
+  background: linear-gradient(64deg, #A1A6CF 10.81%, #C8CADF 91.19%);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --icon-color: #60637a;
+  --icon-active: #40488E;
+}
+
+.material-icons {
+  font-family: 'Material-Symbols';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 2.5rem;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
