@@ -1,0 +1,42 @@
+#team-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  grid-row: 1/17;
+  grid-column: 1/33;
+  border-radius: 1rem;
+  padding: 1rem;
+  height: 100%;
+}
+
+#DO-NOT-REMOVE {
+  width: 100%;
+  overflow-y: auto;
+  margin: 1rem;
+}
+
+#team-list table  {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 1rem;
+  color: var(--not-black);
+}
+
+#team-list table tbody td {
+  padding: 0.5rem;
+  border: 1px solid var(--not-black);
+  border-radius: 1rem;
+  text-align: center;
+}
+
+#team-list table thead {
+  position: sticky;
+  top: 0;
+}
+
+#team-list table thead th {
+  padding: 0.5rem;
+  text-align: center;
+  background: var(--blue-accent);
+}

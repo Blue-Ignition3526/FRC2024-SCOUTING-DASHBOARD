@@ -1,0 +1,116 @@
+
+dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50vw;
+  height: 50vh;
+  border-radius: 1rem;
+  flex-direction: column;
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(3px);
+}
+
+#dialog-header {
+  width: 100%;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  color: var(--not-white);
+  padding: 0.5rem 1rem;
+}
+
+#dialog-header button {
+  color: var(--icon-color);
+  border: none;
+  background: none;
+}
+
+#dialog-header button:hover {
+  cursor: pointer;
+}
+
+form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.data-entry {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.data-entry label {
+  color: var(--not-black);
+  font-size: 1.2rem;
+}
+
+.data-entry input {
+  width: 50%;
+  height: 2rem;
+  border-radius: 0.5rem;
+  border: none;
+  background: var(--not-white);
+  color: var(--not-black);
+  padding: 0 0.5rem;
+}
+
+#settings-buttons {
+  width: 100%;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+}
+
+#settings-buttons button {
+  width: 5rem;
+  height: 2rem;
+  border-radius: 0.5rem;
+  color: var(--not-black);
+  font-size: 1.2rem;
+  margin: 0 0.5rem;
+}
+
+#settings-buttons button:hover {
+  cursor: pointer;
+}
+
+#settings-buttons .main {
+  background: var(--button-color);
+  border: 2px solid var(--icon-color);
+}
+
+#settings-buttons .main:hover {
+  background: #7880bd;
+  color: var(--not-white);
+}
+
+#alerts-box {
+  position: fixed;
+  top: -1rem;
+  right: -90vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.alert {
+  padding: 1rem;
+  border-radius: 1rem;
+  margin: 0.25rem 0;
+  display: flex;
+  align-items: center;
+  z-index: 100;
+}
