@@ -30,6 +30,14 @@
   text-align: center;
 }
 
+#team-list table tbody tr {
+  background: var(--table-color);
+}
+
+#team-list table tbody tr:nth-child(odd) {
+  background: var(--table-alternate);
+}
+
 #team-list table thead {
   position: sticky;
   top: 0;
@@ -39,4 +47,5 @@
   padding: 0.5rem;
   text-align: center;
   background: var(--blue-accent);
+  color: var(--not-white);
 }

@@ -43,6 +43,8 @@
   --not-black: #1a1a1a;
   --blue-accent: #262c5c;
   --button-color: #AEB3DB;
+  --table-color: #f1f1f1;
+  --table-alternate: #d8d8d8;
 }
 
 .material-icons {

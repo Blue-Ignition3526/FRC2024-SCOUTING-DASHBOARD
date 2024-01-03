@@ -1,5 +1,6 @@
 import CircularProgress from "./graphics/CircularProgress.tsx";
 import { useEffect, useState } from "react";
+import "../../styles/cards/RunningMatch.css";
 
 function RunningMatch() {
   const [runningMatch, setRunningMatch] = useState(0)

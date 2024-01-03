@@ -4,11 +4,13 @@ import "../styles/List.css"
 function List () {
   const [list, setList] = useState([])
   const [headers, setHeaders] = useState<JSX.Element[]>([])
-  const [teamInfo, setTeamInfo] = useState([])
+  const [teamInfo, setTeamInfo] = useState<JSX.Element[]>([])
 
   useEffect(() => {
     getList()
   }, [])
+
+  
 
   async function getList() {
     const url = localStorage.getItem('apiURL');
@@ -27,8 +29,18 @@ function List () {
         setList(data["teams"])
 
         const titles = Object.keys(data["teams"][0])
-        const newHeaders = titles.map((title: string) => <th key={title}>{title}</th>);
+        const newHeaders = titles.map((title: string) => {
+          const formattedTitle = title.charAt(0).toUpperCase() + title.slice(1).replace(/_/g, ' ');
+          return <th key={title}>{formattedTitle}</th>;
+        });
         setHeaders(newHeaders);
+
+        const newTeamInfo = data["teams"].map((team: any, index: number) => (
+          <tr key={index}>
+            {Object.values(team).map((value, i) => <td key={i}>{value as React.ReactNode}</td>)}
+          </tr>
+        ));
+        setTeamInfo(newTeamInfo);
       }
     } catch (err) {
       console.log(err)
@@ -46,6 +58,7 @@ function List () {
               </tr>
             </thead>
             <tbody>
+              {teamInfo}
             </tbody>
           </table>
         </div>
