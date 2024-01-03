@@ -2,17 +2,14 @@ import { useEffect, useState } from "react"
 import "../styles/List.css"
 
 function List () {
-  const [list, setList] = useState([])
   const [headers, setHeaders] = useState<JSX.Element[]>([])
   const [teamInfo, setTeamInfo] = useState<JSX.Element[]>([])
 
-  useEffect(() => {
-    getList()
-  }, [])
+  getData()
 
   
 
-  async function getList() {
+  async function getData() {
     const url = localStorage.getItem('apiURL');
     if (!url) {
       console.error("API URL not set");
@@ -26,7 +23,6 @@ function List () {
       const data = await res.json();
 
       if (Boolean(data["success"])) {
-        setList(data["teams"])
 
         const titles = Object.keys(data["teams"][0])
         const newHeaders = titles.map((title: string) => {

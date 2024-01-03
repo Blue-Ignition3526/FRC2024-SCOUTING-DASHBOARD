@@ -1,0 +1,44 @@
+
+
+#teams-simple {
+  grid-row: 1/7;
+  grid-column: 5/20;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+}
+
+#teams-simple h2 {
+  font-size: 1.4rem;
+  width: 100%;
+  text-align: center;
+  background: var(--blue-accent);
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+#teams-simple #DO-NOT-REMOVE {
+  width: 100%;
+}
+
+#teams-simple table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 0 0 0.5rem 0.5rem;
+  color: var(--not-black);
+  overflow: hidden;
+}
+
+#teams-simple table tbody td {
+  padding: 0.2rem;
+  font-size: 0.9rem;
+}
+
+#teams-simple table tbody tr {
+  background: var(--table-color);
+}
+
+#teams-simple table tbody tr:nth-child(odd) {
+  background: var(--table-alternate);
+}

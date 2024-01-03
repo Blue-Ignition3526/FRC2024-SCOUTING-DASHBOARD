@@ -12,7 +12,7 @@
 }
 
 .circular-progress__text {
-  fill: #4c9aff;
+  fill: var(--light-blue);
   font-size: 20px;
   font-weight: bold;
 }
