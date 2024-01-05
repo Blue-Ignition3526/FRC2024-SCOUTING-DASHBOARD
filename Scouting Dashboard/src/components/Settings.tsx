@@ -8,16 +8,19 @@ function Settings() {
   interface Settings {
     totalMatches: number
     apiURL: string
+    apiPassword: string
   }
 
   let defaults: Settings = {
     totalMatches: 0,
-    apiURL: "null",
+    apiURL: "",
+    apiPassword: "",
   }
 
   let settings: Settings = {
     totalMatches: localStorage.getItem('totalMatches') ? parseInt(localStorage.getItem('totalMatches')!) : defaults.totalMatches,
     apiURL: localStorage.getItem('apiURL') ? localStorage.getItem('apiURL')! : defaults.apiURL,
+    apiPassword: localStorage.getItem('apiPassword') ? localStorage.getItem('apiPassword')! : defaults.apiPassword,
   }
 
   function handleOpen () {
@@ -44,6 +47,7 @@ function Settings() {
     const data = new FormData(e.currentTarget)
     const totalMatches = data.get('matchNumber')
     const apiURL = data.get('apiURL')
+    const apiPassword = data.get('apiPassword')
 
     if (totalMatches) {
       localStorage.setItem('totalMatches', totalMatches.toString())
@@ -53,6 +57,12 @@ function Settings() {
     if (apiURL) {
       localStorage.setItem('apiURL', apiURL.toString())
       settings.apiURL = apiURL.toString()
+    }
+
+    if (apiPassword) {
+
+      localStorage.setItem('apiPassword', apiPassword.toString())
+      settings.apiPassword = apiPassword.toString()
     }
 
     handleClose()
@@ -86,6 +96,10 @@ function Settings() {
             <label htmlFor="apiURL">API URL</label>
             <input type="text" id="apiURL" name="apiURL" defaultValue={settings.apiURL}/>
           </div>
+          <div className='data-entry'>
+            <label htmlFor="apiPassword">API Password</label>
+            <input type="password" id="apiPassword" name="apiPassword" defaultValue={settings.apiPassword}/>
+          </div>
           <div id='settings-buttons'>
             <button type="submit" className='main'>Save</button>
             <button onClick={clearStorage} className='second'>Clear</button>
@@ -104,10 +118,10 @@ function Alerts ({values, defaults}: {values: object, defaults: object}) {
     if (values[key as keyof typeof values] === defaults[key as keyof typeof defaults]) {
       missing.push(
         <div className="alert card">
-          <div style={{width: '2.5rem', height: '2.5rem'}}>
+          <div style={{width: '2.5rem', height: '2.5rem' }}>
             <span className="icon material-icons" style={{ color: 'red', paddingRight: '1rem' }}>error</span>
           </div>
-          <p><b>'{key}'</b> is not set.</p>
+          <p style={{ color: 'red' }}><b>'{key}'</b> is not set.</p>
         </div>
       )
     }

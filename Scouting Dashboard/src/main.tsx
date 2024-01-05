@@ -9,6 +9,7 @@ import Footer from './components/Footer.tsx'
 
 import Home from './components/Home.tsx'
 import List from './components/List.tsx'
+import Terminal from './components/Terminal.tsx'
 
 const router = createBrowserRouter([
   { 
@@ -36,6 +37,7 @@ const router = createBrowserRouter([
     element: (
       <>
         <Nav route='terminal'/>
+        <Terminal />
         <Footer />
       </>
     ),
