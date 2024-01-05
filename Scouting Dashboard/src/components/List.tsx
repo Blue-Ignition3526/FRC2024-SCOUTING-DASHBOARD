@@ -5,9 +5,9 @@ function List () {
   const [headers, setHeaders] = useState<JSX.Element[]>([])
   const [teamInfo, setTeamInfo] = useState<JSX.Element[]>([])
 
-  getData()
-
-  
+  useEffect(() => {
+    getData()
+  }, [])
 
   async function getData() {
     const url = localStorage.getItem('apiURL');

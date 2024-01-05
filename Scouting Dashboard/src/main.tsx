@@ -10,6 +10,8 @@ import Footer from './components/Footer.tsx'
 import Home from './components/Home.tsx'
 import List from './components/List.tsx'
 import Terminal from './components/Terminal.tsx'
+import Pits from './components/Pits.tsx'
+import PitsTeams from './components/PitsTeams.tsx'
 
 const router = createBrowserRouter([
   { 
@@ -47,6 +49,17 @@ const router = createBrowserRouter([
     element: (
       <>
         <Nav route='pits'/>
+        <Pits />
+        <Footer />
+      </>
+    ),
+  },
+  {
+    path: '/pits/:team',
+    element: (
+      <>
+        <Nav route='pits'/>
+        <PitsTeams />
         <Footer />
       </>
     ),
